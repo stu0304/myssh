@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-10-8 17:57:10 by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.tianruan.model.TWorkLog" table="t_work_log" >
+        <id name="TLogId" type="string">
+            <column name="t_log_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TPersonId" type="string">
+            <column name="t_person_id" length="45" />
+        </property>
+        <property name="TLogDate" type="string">
+            <column name="t_log_date" length="45">
+                <comment>&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="TStartTime" type="string">
+            <column name="t_start_time" length="45">
+                <comment>&#201;&#207;&#176;&#224;&#180;&#242;&#191;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="TEndTime" type="string">
+            <column name="t_end_time" length="45">
+                <comment>&#207;&#194;&#176;&#224;&#180;&#242;&#191;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="TWorkLate" type="string">
+            <column name="t_work_late" length="20">
+                <comment>&#179;&#217;&#181;&#189; 1</comment>
+            </column>
+        </property>
+        <property name="TWorkLess" type="string">
+            <column name="t_work_less" length="45">
+                <comment>&#212;&#231;&#205;&#203;</comment>
+            </column>
+        </property>
+        <property name="TWorkNone" type="string">
+            <column name="t_work_none" length="45">
+                <comment>&#191;&#245;&#185;&#164;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

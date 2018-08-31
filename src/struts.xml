@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	
+				<constant name="strutsObjectFactory" value="spring" />
+				<constant name="struts.enable.DynamicMethodInvocation" value="false" /> 
+		      <package name="default" namespace="/" extends="struts-default">
+		      
+		      
+		        
+		      
+		        <action name="*_*" class="{1}" method="{2}">
+		           <result name="myresult">/result.jsp</result>
+  				    <result name="mymain">/WEB-INF/jsp/main.jsp</result>
+  					<result name="goToPersonPage">/WEB-INF/jsp/person/personInfo.jsp</result>
+		            <result name="goToTreePage">/WEB-INF/jsp/tree/tree.jsp</result>
+		            <result name="goToSysUser">/WEB-INF/jsp/sysUser/sysUserList.jsp</result>
+		            <result name="goToModulesPage">/WEB-INF/jsp/modules/modules.jsp</result>
+		              <result name="addModule">\WEB-INF\jsp\modules\addMondule.jsp</result>
+		              <result name="goToRolePage">\WEB-INF\jsp\role\role.jsp</result>
+		              <result name="goToDepartPage">/WEB-INF/jsp/department/department.jsp</result>
+		              <result name="goToNoticePage">/WEB-INF/jsp/notice/notice.jsp</result>				
+		         	<result name="goToWorkRules">/WEB-INF/jsp/signManage/workrules.jsp</result>
+  					<result name="goToWorkLog">/WEB-INF/jsp/signManage/worklog.jsp</result>
+  					<result name="goToLeavePermit">/WEB-INF/jsp/signManage/leavepermit.jsp</result>
+					<result name="goTomyLeaveColumn">/WEB-INF/jsp/signManage/leavecolumn.jsp</result>
+  					<result name="goToWorkLogSum">/WEB-INF/jsp/signManage/leavesum.jsp</result>
+		        </action>
+		        
+		      
+		      </package>
+		   
+	   
+	</struts>

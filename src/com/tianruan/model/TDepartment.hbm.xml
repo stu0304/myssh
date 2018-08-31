@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-11 17:31:23 by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.tianruan.model.TDepartment" table="t_department">
+        <id name="TDeptId" type="string">
+            <column name="t_dept_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TDeptName" type="string">
+            <column name="t_dept_name" length="45">
+             
+            </column>
+        </property>
+        <property name="TStatus" type="string">
+            <column name="t_status" length="20">
+               
+            </column>
+        </property>
+        <property name="TBudget" type="string">
+            <column name="t_budget" length="45">
+                
+            </column>
+        </property>
+        <property name="TDeptDesc" type="string">
+            <column name="t_dept_desc" length="45">
+                
+            </column>
+        </property>
+        <property name="TAdminId" type="string">
+            <column name="t_admin_id" length="45">
+               
+            </column>
+        </property>
+        <property name="TBianzhi" type="string">
+            <column name="t_bianzhi" length="45">
+               
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

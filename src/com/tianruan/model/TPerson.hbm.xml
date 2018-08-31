@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-6 16:24:50 by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.tianruan.model.TPerson" table="t_person">
+        <id name="TPersonId" type="string">
+            <column name="t_person_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TPersonName" type="string">
+            <column name="t_person_name" length="45">
+                <comment>&#212;&#177;&#185;&#164;&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="TMobile" type="string">
+            <column name="t_mobile" length="45">
+                <comment>&#202;&#214;&#187;&#250;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="TWorkNum" type="string">
+            <column name="t_work_num" length="45">
+                <comment>&#212;&#177;&#185;&#164; &#185;&#164;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="TEducation" type="string">
+            <column name="t_education" length="10">
+                <comment>&#209;&#167;&#192;&#250;</comment>
+            </column>
+        </property>
+        <property name="TIdNum" type="string">
+            <column name="t_id_num" length="45">
+                <comment>&#201;&#237;&#183;&#221;&#214;&#164;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="TAddress" type="string">
+            <column name="t_address" length="10">
+                <comment>&#207;&#214;&#215;&#161;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="TGender" type="string">
+            <column name="t_gender" length="10">
+                <comment>&#208;&#212;&#177;&#240;</comment>
+            </column>
+        </property>
+        <property name="TBirthDate" type="string">
+            <column name="t_birth_date" length="45">
+                <comment>&#201;&#250;&#200;&#213;</comment>
+            </column>
+        </property>
+        <property name="TAddDate" type="string">
+            <column name="t_add_date" length="45">
+                <comment>&#200;&#235;&#214;&#176;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="TWorkPhone" type="string">
+            <column name="t_work_phone" length="45">
+                <comment>&#176;&#236;&#185;&#171;&#181;&#231;&#187;&#176;</comment>
+            </column>
+        </property>
+        <property name="TType" type="string">
+            <column name="t_type" length="10">
+                <comment>&#212;&#177;&#185;&#164;&#192;&#224;&#208;&#205;
+                &#186;&#207;&#205;&#172;&#185;&#164;&#161;&#162;&#193;&#217;&#202;&#177;&#185;&#164;&#161;&#162;&#202;&#212;&#211;&#195;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="TJobId" type="string">
+            <column name="t_job_id" length="50" not-null="true">
+                <comment>&#214;&#176;&#206;&#187;id</comment>
+            </column>
+        </property>
+        <property name="TDepartmentId" type="string">
+            <column name="t_department_id" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

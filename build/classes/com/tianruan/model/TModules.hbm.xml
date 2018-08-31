@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-6 16:24:50 by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.tianruan.model.TModules" table="t_modules">
+        <id name="TModuleId" type="string">
+            <column name="t_module_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TModuleName" type="string">
+            <column name="t_module_name" length="45">
+                <comment>&#196;&#163;&#191;&#233;&#195;&#251;&#179;&#198; &#177;&#200;&#200;&#231; &#212;&#164;&#212;&#188;&#185;&#220;&#192;&#237;
+                &#211;&#195;&#187;&#167;&#185;&#220;&#192;&#237;</comment>
+            </column>
+        </property>
+        <property name="TModulePid" type="string">
+            <column name="t_module_pid" length="50">
+                <comment>&#196;&#163;&#191;&#233;&#181;&#196;&#184;&#184;ID &#202;&#247;&#208;&#206;&#189;&#225;&#185;&#185; &#208;&#232;&#210;&#170;</comment>
+            </column>
+        </property>
+        <property name="TModuleUrl" type="string">
+            <column name="t_module_url" length="200">
+                <comment>&#196;&#163;&#191;&#233;&#181;&#196;url &#193;&#180;&#189;&#211;&#181;&#216;&#214;&#183; &#163;&#186; person/showPerson.jsp
+                main.jsp&#214;&#247;&#210;&#179;&#202;&#185;&#211;&#195; iframe &#181;&#227;&#187;&#247;&#202;&#247;&#208;&#206;&#196;&#163;&#191;&#233;&#189;&#218;&#181;&#227;
+                &#180;&#165;&#183;&#162;url &#210;&#179;&#195;&#230;&#204;&#248;&#215;&#170;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

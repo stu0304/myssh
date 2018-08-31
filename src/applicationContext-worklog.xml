@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+		<bean id="workLogAction" class="com.tianruan.action.WorkLogAction">
+			<property name="workLogService" ref="workLogServiceImpl"></property>
+			<property name="workRulesService" ref="workRulesServiceImpl"></property>
+			
+			
+		</bean>
+			
+		<bean id="workLogServiceImpl" class="com.tianruan.service.impl.WorkLogService">			
+	     	<property name="workLogDao" ref="workLogDAO"></property>
+	     	<property name="personDao"  ref="personDAO"></property>
+	     	<property name="workRulesService" ref="workRulesServiceImpl"></property>
+	     	<property name="personService" ref="personServiceImpl"></property>
+	    </bean>
+	    
+	    <bean id="workLogDAO" class="com.tianruan.dao.WorkLogDao">
+	         <property name="sessionFactory" ref="sessionFactory"></property>
+	    </bean>
+	    
+</beans>

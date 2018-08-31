@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-29 21:06:37 by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.tianruan.model.TLeavePermit" table="t_leave_permit">
+        <id name="TLpId" type="string">
+            <column name="t_lp_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TLpType" type="string">
+            <column name="t_lp_type" length="45">
+                <comment>&#199;&#235;&#188;&#217;&#192;&#224;&#208;&#205;&#163;&#186;&#202;&#194;&#188;&#217; &#178;&#161;&#188;&#217; &#187;&#233;&#188;&#217;
+                &#201;&#165;&#188;&#217; &#196;&#234;&#208;&#221;&#188;&#217;</comment>
+            </column>
+        </property>
+        <property name="TStartTime" type="string">
+            <column name="t_start_time" length="45">
+                <comment>&#188;&#217;&#198;&#218;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="TEndTime" type="string">
+            <column name="t_end_time" length="45">
+                <comment>&#188;&#217;&#198;&#218;&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="TStatus" type="string">
+            <column name="t_status" length="45">
+                <comment>&#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;&#163;&#186;&#206;&#180;&#201;&#243;&#186;&#203; &#205;&#172;&#210;&#226;
+                &#190;&#220;&#190;&#248;</comment>
+            </column>
+        </property>
+        <property name="TPersonId" type="string">
+            <column name="t_person_id" length="50">
+                <comment>&#201;&#234;&#199;&#235;&#200;&#203; person id</comment>
+            </column>
+        </property>
+        <property name="TAdminId" type="string">
+            <column name="t_admin_id" length="45">
+                <comment>&#201;&#243;&#186;&#203;&#200;&#203; person id</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

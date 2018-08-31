@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-25 23:15:30 by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.tianruan.model.TWorkRules" table="t_work_rules" >
+        <id name="TRuleId" type="string">
+            <column name="t_rule_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TStartTime" type="string">
+            <column name="t_start_time" length="45" />
+        </property>
+        <property name="TEndTime" type="string">
+            <column name="t_end_time" length="45" />
+        </property>
+        <property name="TAfterMinute" type="string">
+            <column name="t_after_minute" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

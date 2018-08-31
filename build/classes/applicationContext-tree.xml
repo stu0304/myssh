@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+		<bean id="treeAction" class="com.tianruan.action.TreeAction">
+			<property name="treeService" ref="treeService"></property>
+		</bean>
+			
+		<bean id="treeService" class="com.tianruan.service.impl.TreeService">
+	     	<property name="treeDao" ref="treeDao"></property>
+	    </bean>
+	    
+	    <bean id="treeDao" class="com.tianruan.dao.TreeDao">
+	         <property name="sessionFactory" ref="sessionFactory"></property>
+	    </bean>
+	    
+</beans>

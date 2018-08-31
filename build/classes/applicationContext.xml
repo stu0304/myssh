@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+<!-- 数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>           
+           <property name="url" value="jdbc:mysql://localhost:3306/tianruandb?useUnicode=true&amp;characterEncoding=UTF-8">   
+	<!--	<property name="url" value="jdbc:mysql://10.2.17.176:3306/teacher?useUnicode=true&amp;characterEncoding=UTF-8"> 
+	-->
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>		
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties">
+		<props>
+			<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+			<prop key="hibernate.show_sql">true</prop>
+			<!-- <prop key="hibernate.format_sql">true</prop> -->
+		</props>
+		</property>
+		
+	<property name="mappingResources">
+			<list>
+		    <value>com/tianruan/model/TSysUser.hbm.xml</value>
+		  <!--   <value>com/tianruan/model/TPerson.hbm.xml</value>
+		    <value>com/tianruan/model/TModules.hbm.xml</value>
+		    <value>com/tianruan/model/TRole.hbm.xml</value>	
+	        <value>com/tianruan/model/TDepartment.hbm.xml</value>	
+	        <value>com/tianruan/model/RUserRole.hbm.xml</value>
+	            <value>com/tianruan/model/RRoleModule.hbm.xml</value>		
+	        <value>com/tianruan/model/TNotice.hbm.xml</value>
+	           <value>com/tianruan/model/RNoticePerson.hbm.xml</value>
+	            <value>com/tianruan/model/TWorkRules.hbm.xml</value> 
+		    <value>com/tianruan/model/TWorkLog.hbm.xml</value> 
+		    <value>com/tianruan/model/TLeavePermit.hbm.xml</value>  -->
+	        
+			</list>		
+		</property> 
+	</bean>
+	
+	<bean id="chartAction" class="com.tianruan.action.ChartAction">
+	    	<property name="departService" ref="departmentService"></property>
+	    	<property name="workLogService" ref="workLogServiceImpl"></property>
+	    	
+	</bean>
+
+		<bean id="loginAction" class="com.tianruan.action.LoginAction">
+		  <property name="loginService" ref="loginServiceImpl"></property>
+		  <property name="personService" ref="personServiceImpl"></property>
+		  <property name="roleService" ref="roleService"></property>
+	    </bean>
+	     
+	     <bean id="loginServiceImpl" class="com.tianruan.service.impl.LoginService">
+	     <property name="loginDao" ref="myLoginDao"></property>
+	    </bean>
+	    
+	    	    <bean id="myLoginDao" class="com.tianruan.dao.LoginDao">
+	               <property name="sessionFactory" ref="sessionFactory"></property>
+	          </bean>
+	    
+	
+			<bean id="sysUserAction" class="com.tianruan.action.SysUserAction">
+			<property name="sysUserService" ref="sysUserServiceImpl"></property>
+			</bean>
+			
+			 <bean id="sysUserServiceImpl" class="com.tianruan.service.impl.SysUserService">
+	     <property name="sysUserDao" ref="sysUserDAO"></property>
+	    </bean>
+	    
+	        <bean id="sysUserDAO" class="com.tianruan.dao.SysUserDao">
+	               <property name="sessionFactory" ref="sessionFactory"></property>
+	          </bean>
+	<!-- 个人中心 -->	
+		<bean id="jumpAction" class="com.tianruan.action.JumpAction"> </bean>
+		<bean id="personAction" class="com.tianruan.action.PersonAction">
+			<property name="personService" ref="personServiceImpl"></property>
+		</bean>
+			
+		<bean id="personServiceImpl" class="com.tianruan.service.impl.PersonService">
+	     	<property name="personDao" ref="personDAO"></property>
+	    </bean>
+	    
+	    <bean id="personDAO" class="com.tianruan.dao.PersonDao">
+	         <property name="sessionFactory" ref="sessionFactory"></property>
+	    </bean>
+	    
+	    <import resource="applicationContext-tree.xml"/>
+	    <import resource="applicationContext-modules.xml"/>
+	    <import resource="applicationContext-role.xml"/>
+        <import resource="applicationContext-depart.xml"/> 
+        <import resource="applicationContext-notice.xml"/>
+   		<import resource="applicationContext-workrules.xml"/>
+	    <import resource="applicationContext-worklog.xml"/>
+	    <import resource="applicationContext-leavePermit.xml"/> 
+</beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-11 21:37:25 by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.tianruan.model.TNotice" table="t_notice">
+        <id name="TNoticeId" type="string">
+            <column name="t_notice_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TTitle" type="string">
+            <column name="t_title" length="100">
+                <comment>&#185;&#171;&#184;&#230;&#204;&#226;&#196;&#191;</comment>
+            </column>
+        </property>
+        <property name="TContent" type="string">
+            <column name="t_content" length="2000">
+                <comment>&#185;&#171;&#184;&#230;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="TAdminId" type="string">
+            <column name="t_admin_id" length="50">
+                <comment>&#183;&#162;&#178;&#188;&#200;&#203;id</comment>
+            </column>
+        </property>
+        <property name="TAddDate" type="string">
+            <column name="t_add_date" length="45">
+                <comment>&#183;&#162;&#178;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="TStatus" type="string">
+            <column name="t_status" length="45">
+                <comment>&#183;&#162;&#178;&#188;&#215;&#180;&#204;&#172; &#206;&#180;&#183;&#162;&#178;&#188;&#161;&#162;&#210;&#209;&#183;&#162;&#178;&#188;</comment>
+            </column>
+        </property>
+        <property name="TVisitNum" type="string">
+            <column name="t_visit_num" length="45">
+                <comment>&#183;&#195;&#206;&#202;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

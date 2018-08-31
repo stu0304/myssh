@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 21, 2016 9:21:18 AM by Hibernate Tools 5.1.0.Beta1 -->
+<hibernate-mapping>
+    <class name="com.tianruan.model.RNoticePerson" table="r_notice_person">
+        <id name="TNpId" type="string">
+            <column name="t_np_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TNoticeId" type="string">
+            <column name="t_notice_id" length="50" />
+        </property>
+        <property name="TPersonId" type="string">
+            <column name="t_person_id" length="50" />
+        </property>
+        <property name="TRead" type="string">
+            <column name="t_read" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

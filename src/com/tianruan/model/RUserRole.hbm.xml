@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-13 13:58:49 by Hibernate Tools 3.6.0.Final -->
+<hibernate-mapping>
+    <class name="com.tianruan.model.RUserRole" table="r_user_role">
+    <id name="TUserId" type="string">
+            <column name="t_user_id" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="TRoleId" type="string">
+            <column name="t_role_id" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>
